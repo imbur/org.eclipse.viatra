@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.ui.handlers.HandlerUtil
-import org.eclipse.viatra.query.patternlanguage.emf.eMFPatternLanguage.PatternModel
+import org.eclipse.viatra.query.patternlanguage.emf.vql.PatternModel
 import org.eclipse.viatra.query.tooling.cpp.localsearch.LocalSearchCppGenerator
 import org.eclipse.viatra.query.tooling.cpp.localsearch.api.ILocalsearchGeneratorOutputProvider
 import org.eclipse.viatra.query.tooling.cpp.localsearch.serializer.DefaultSerializer

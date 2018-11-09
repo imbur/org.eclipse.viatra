@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.viatra.query.tooling.cpp.localsearch.ui;
 
-import org.eclipse.viatra.query.patternlanguage.emf.ui.internal.EMFPatternLanguageActivator;
+import org.eclipse.viatra.query.patternlanguage.emf.ui.internal.EmfActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
@@ -28,7 +28,7 @@ public class GeneratorExecutableExtensionFactory extends AbstractGuiceAwareExecu
 
     @Override
     protected Injector getInjector() {
-        return EMFPatternLanguageActivator.getInstance().getInjector(EMFPatternLanguageActivator.ORG_ECLIPSE_VIATRA_QUERY_PATTERNLANGUAGE_EMF_EMFPATTERNLANGUAGE);
+        return EmfActivator.getInstance().getInjector(EmfActivator.ORG_ECLIPSE_VIATRA_QUERY_PATTERNLANGUAGE_EMF_EMFPATTERNLANGUAGE);
     }
 
 }

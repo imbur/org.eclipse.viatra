@@ -10,8 +10,8 @@
 package org.eclipse.viatra.query.tooling.cpp.localsearch.ui.handler
 
 import java.util.List
-import org.eclipse.viatra.query.patternlanguage.emf.eMFPatternLanguage.PatternModel
 import org.eclipse.viatra.query.patternlanguage.emf.specification.SpecificationBuilder
+import org.eclipse.viatra.query.patternlanguage.emf.vql.PatternModel
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException
 import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PQuery
 

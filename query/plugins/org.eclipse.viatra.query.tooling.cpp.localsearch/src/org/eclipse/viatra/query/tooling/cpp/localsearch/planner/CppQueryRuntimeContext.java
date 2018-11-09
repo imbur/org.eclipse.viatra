@@ -11,7 +11,6 @@
 package org.eclipse.viatra.query.tooling.cpp.localsearch.planner;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collections;
 import java.util.concurrent.Callable;
 
 import org.eclipse.viatra.query.runtime.emf.EMFQueryMetaContext;
@@ -20,7 +19,9 @@ import org.eclipse.viatra.query.runtime.matchers.context.IInputKey;
 import org.eclipse.viatra.query.runtime.matchers.context.IQueryMetaContext;
 import org.eclipse.viatra.query.runtime.matchers.context.IQueryRuntimeContextListener;
 import org.eclipse.viatra.query.runtime.matchers.context.IndexingService;
+import org.eclipse.viatra.query.runtime.matchers.tuple.ITuple;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
+import org.eclipse.viatra.query.runtime.matchers.tuple.TupleMask;
 
 /**
  * This is a dummy implementation, as there is no java runtime available in case of cpp localsearch
@@ -45,35 +46,6 @@ public class CppQueryRuntimeContext extends AbstractQueryRuntimeContext{
 
     @Override
     public boolean isCoalescing() {
-        return false;
-    }
-
-    @Override
-    public boolean isIndexed(IInputKey key) {
-        return false;
-    }
-
-    @Override
-    public void ensureIndexed(IInputKey key) {
-    }
-
-    @Override
-    public int countTuples(IInputKey key, Tuple seed) {
-        return 0;
-    }
-
-    @Override
-    public Iterable<Tuple> enumerateTuples(IInputKey key, Tuple seed) {
-        return Collections.emptySet();
-    }
-
-    @Override
-    public Iterable<? extends Object> enumerateValues(IInputKey key, Tuple seed) {
-        return Collections.emptySet();
-    }
-
-    @Override
-    public boolean containsTuple(IInputKey key, Tuple seed) {
         return false;
     }
 
@@ -117,5 +89,41 @@ public class CppQueryRuntimeContext extends AbstractQueryRuntimeContext{
             throw new InvocationTargetException(e);
         }
     }
+
+	@Override
+	public boolean isIndexed(IInputKey key, IndexingService service) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void ensureIndexed(IInputKey key, IndexingService service) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int countTuples(IInputKey key, TupleMask seedMask, ITuple seed) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Iterable<Tuple> enumerateTuples(IInputKey key, TupleMask seedMask, ITuple seed) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<? extends Object> enumerateValues(IInputKey key, TupleMask seedMask, ITuple seed) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean containsTuple(IInputKey key, ITuple seed) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

@@ -10,15 +10,15 @@
  *******************************************************************************/
 package org.eclipse.viatra.query.tooling.cpp.localsearch
 
+import java.util.List
+import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.viatra.query.patternlanguage.emf.vql.PatternModel
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PQuery
 import org.eclipse.viatra.query.tooling.cpp.localsearch.api.IGeneratorOutputProvider
 import org.eclipse.viatra.query.tooling.cpp.localsearch.api.ILocalsearchGeneratorOutputProvider
-import org.eclipse.viatra.query.tooling.cpp.localsearch.planner.PlanCompiler
-import java.util.List
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PQuery
-import org.eclipse.viatra.query.patternlanguage.emf.eMFPatternLanguage.PatternModel
-import org.eclipse.emf.ecore.EClass
 import org.eclipse.viatra.query.tooling.cpp.localsearch.model.QueryDescriptor
+import org.eclipse.viatra.query.tooling.cpp.localsearch.planner.PlanCompiler
 
 /**
  * @author Robert Doczi

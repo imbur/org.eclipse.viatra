@@ -33,6 +33,7 @@ import org.eclipse.viatra.query.runtime.matchers.psystem.rewriters.DefaultFlatte
 import org.eclipse.viatra.query.runtime.matchers.psystem.rewriters.PBodyNormalizer
 import org.eclipse.viatra.query.runtime.matchers.psystem.rewriters.PQueryFlattener
 import org.eclipse.viatra.query.tooling.cpp.localsearch.model.PatternDescriptor
+import org.eclipse.viatra.query.runtime.matchers.backend.QueryEvaluationHint.BackendRequirement
 
 /**
  * @author Robert Doczi
@@ -54,7 +55,7 @@ class PlanCompiler implements IQueryBackendContext {
     new () {
         val flattenCallPredicate = new DefaultFlattenCallPredicate
         this.flattener = new PQueryFlattener(flattenCallPredicate)
-        this.normalizer = new PBodyNormalizer(null, false)
+        this.normalizer = new PBodyNormalizer(null)
         this.compiledBodies = newHashMap
         this.dependencies = newHashSet
         this.frameRegistry = new MatchingFrameRegistry
@@ -135,7 +136,7 @@ class PlanCompiler implements IQueryBackendContext {
         new IQueryBackendHintProvider(){
             
             override getQueryEvaluationHint(PQuery query) {
-                return new QueryEvaluationHint(Collections.emptyMap(), null)
+                return new QueryEvaluationHint(Collections.emptyMap(), null as BackendRequirement)
             }
             
         }
@@ -164,5 +165,9 @@ class PlanCompiler implements IQueryBackendContext {
     override areUpdatesDelayed() {
         throw new UnsupportedOperationException("PlanCompiler is never used in runtime!")
     }
+				
+				override getRequiredMatcherCapability(PQuery query, QueryEvaluationHint overrideHints) {
+					throw new UnsupportedOperationException("TODO: auto-generated method stub")
+				}
 
 }
